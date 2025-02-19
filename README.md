@@ -269,6 +269,13 @@ http://<machine_public_ip>:<configured_port>
 ```
 If everything has been configured correctly, you'll be met with a Login Page. 
 
+If you run into any troubles, make sure that your **firewall is configured to allow external access from the port you selected**, this can be done so in Ubunutu via the following: 
+
+```bash
+sudo ufw allow <selected_port_number>
+sudo ufw reload
+```
+
 <br>
 
 ![Login Page](doc/login_page.png)
