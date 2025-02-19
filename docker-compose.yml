@@ -1,0 +1,32 @@
+services:
+  web-console:
+    image: ghcr.io/maximus-debski/ioclink-webconsole:latest
+    ports:
+       - '${WEBUI_PORT:-8000}:8000'
+    volumes:
+      - ${APP_DATA_PATH}:/app/iocLink
+    environment:
+      - WEBUI_USER=${WEBUI_USER}
+      - WEBUI_PASS=${WEBUI_PASS}
+      - TIMEZONE=${TIMEZONE}
+      - AES_KEY=${AES_KEY}
+      - SECRET_KEY=${SECRET_KEY}
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+    restart: always
+
+  worker:
+    image: ghcr.io/maximus-debski/ioclink-worker:latest
+    volumes:
+      - ${APP_DATA_PATH}:/worker/iocLink/
+    environment:
+      - AES_KEY=${AES_KEY}
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+    restart: always
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
