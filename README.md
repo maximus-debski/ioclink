@@ -1,7 +1,7 @@
 # iOCLink 🔗
 **Version 1.0.1**
 
-iOCLink is a Platform that allows IOCs to be automatically processed and pushed from an Intelligence Server to a SentinelOne Instance, effectively allowing them to be synchronised. 
+iOCLink is a Platform that allows IOCs to be automatically processed and pushed from an Intelligence Server to a SentinelOne Instance, effectively allowing them to be synchronised. Some core features iOCLink offers are the following: 
 
 - **An Autonomous Worker:** 🤖 to handle IOC retreival, processing and pushing **continuously** and **automatically** based on defineable scheduling. 
 
