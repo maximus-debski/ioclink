@@ -310,7 +310,9 @@ Your SentinelOne URL is simply the first component of the URL you use to access 
 
 ![S1 URL Example](doc/url_finding.png)
 
-For example, for the above image, your input for the URL would simply be `https://usea1-purple.sentinelone.net/`
+
+
+For example, for the above image, your input for the URL would simply be `https://mysentinelone.instance.net`
 
 <br>
 
